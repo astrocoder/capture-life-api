@@ -15,11 +15,19 @@ This is a basic blog api designed using golang.
 
 # Usage
 
->>>> Testing can be done using POSTMAN
+Testing can be done using POSTMAN
 
 ## Endpoints
-1. Create a blog > POST "/api/blogs/create" > Enter three key values in Body (x-www-form-urlencoded) `title, content, author`
+### Blogs
+1. Create a blog > POST "/api/blogs/create" > Enter three key values in Body (x-www-form-urlencoded) `title, content, author, timestamp`
 2. Get all blogs > GET "/api/blogs" > This get an array of all blogs.
 3. Get a specific blog > GET "/api/blog/{_id}" > This gets the object of the specified blog id.
-4. Delete a specific blog > DELETE "/api/blog/{_id}/delete" > This deletes the blog identified by the specified id. 
-5. Update a specific blog > PUT "/api/blog/{_id}/update" > This updates the specified blog. This also requires three key values in Body (x-www-form-urlencoded) `title, content, author`
+4. Delete a specific blog > DELETE "/api/blog/{_id}" > This deletes the blog identified by the specified id. 
+5. Update a specific blog > PUT "/api/blog/{_id}" > This updates the specified blog. This also requires three key values in Body (x-www-form-urlencoded) `title, content, author, timestamp`
+
+### Comments
+1. Create a blog > POST "/api/comments/create" > Enter three key values in Body (x-www-form-urlencoded) `title, content, author, timestamp, blog_id, replyto`
+2. Get all blogs > GET "/api/comments" > This get an array of all comments.
+3. Get a specific blog > GET "/api/comment/{_id}" > This gets the object of the specified comment id.
+4. Delete a specific blog > DELETE "/api/comment/{blog_id}" > This deletes the comment identified by the specified blog id. 
+5. Update a specific blog > PUT "/api/comment/{_id}" > This updates the specified comment. This also requires key values in Body (x-www-form-urlencoded) `title, content, author, timestamp, blog_id, replyto`
